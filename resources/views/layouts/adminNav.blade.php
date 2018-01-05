@@ -11,7 +11,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="">
                 Administrator
             </a>
         </div>
@@ -25,7 +25,7 @@
                 <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="" target="_blank">Visit Site</a></li>
+                <li><a href="{{ route('home')}}" target="">Visit Site</a></li>
                 <li class="dropdown ">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                         Name
@@ -66,7 +66,7 @@
                         <ul class="nav navbar-nav">
                             <li class="active"><a href=""><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
                             <li><a href="{{route('menu.index')}}"><span class="glyphicon glyphicon-plane"></span> Menu</a></li>
-                            <li><a href=""><span class="glyphicon glyphicon-cloud"></span> Dish</a></li>
+                            <li><a href="{{route('dish.index')}}"><span class="glyphicon glyphicon-cloud"></span> Dish</a></li>
 
                             <!-- Dropdown-->
                             <li class="panel panel-default" id="dropdown">

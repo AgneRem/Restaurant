@@ -31,6 +31,7 @@
                     <a class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>
+                    <a class="navbar-brand" href="{{ route('reservation')}}">Reservation</a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -52,6 +53,9 @@
                                 </a>
 
                                 <ul class="dropdown-menu">
+                                  @if (Auth::user()->admin)
+                                  <li><a href="{{ route('admin')}}">Admin</a></li>
+                                  @endif
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
