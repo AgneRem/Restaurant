@@ -32,6 +32,12 @@
                         {{ config('app.name', 'Laravel') }}
                     </a>
                     <a class="navbar-brand" href="{{ route('reservation')}}">Reservation</a>
+                    <a id="shopping-cart" class="navbar-brand" href="{{ route('cart')}}"><i class="fa fa-shopping-cart">Cart<span>
+                      @if(Session::has('cart'))
+                        {{ Session::get('cart')->totalQty}} vnt, kaina: {{ Session::get('cart')->totalPrice}} $
+                        @else 0
+                      @endif
+                    </span></i></a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
