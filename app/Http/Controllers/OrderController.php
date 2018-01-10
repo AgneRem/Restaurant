@@ -18,10 +18,18 @@ class OrderController extends Controller
       //serialize objekta pavercia i string'a
       $order->cart = serialize($cart);
       Auth::user()->orders()->save($order);
-      // dd($cart);
-
       Mail::to(Auth::user())->send(new OrderConfirmed($cart));
       Session::forget('cart');
       return redirect()->route('home')->with(['message' => 'Checkout is ok']);
+    }
+
+    public function userProfile(){
+      $orders = Auth::user()->orders;
+      $orders->transform(function ($order, $key) {
+        $order->cart=unserialize($order->cart);
+        return $order;
+      });
+      $orders->all();
+      return view('user', compact('orders'));
     }
 }

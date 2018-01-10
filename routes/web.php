@@ -27,6 +27,7 @@ Route::post('/cart/add', 'CartController@ajaxAdd')->name('cart.add');
 Route::get('/cart', 'CartController@index')->name('cart');
 Route::get('/cart/{id}', 'CartController@deleteByOne')->name('cart.deleteByOne');
 Route::get('/cart/all/{id}', 'CartController@deleteAll')->name('cart.deleteAll');
+Route::get('/user/profile', 'OrderController@userProfile')->name('userProfile');
 
 
 
