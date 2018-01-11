@@ -55,6 +55,7 @@
                                     Login
                                 </button>
 
+                                <a class="btn btn-link" href="{{ route('social.login', 'facebook')}}">Facebook</a>
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     Forgot Your Password?
                                 </a>

@@ -28,6 +28,9 @@ Route::get('/cart', 'CartController@index')->name('cart');
 Route::get('/cart/{id}', 'CartController@deleteByOne')->name('cart.deleteByOne');
 Route::get('/cart/all/{id}', 'CartController@deleteAll')->name('cart.deleteAll');
 Route::get('/user/profile', 'OrderController@userProfile')->name('userProfile');
+//Socialite routes:
+Route::get('login/{driver}', 'Auth\LoginController@redirectToProvider')->name('social.login');
+Route::get('login/{driver}/callback', 'Auth\LoginController@handleProviderCallback');
 
 
 
