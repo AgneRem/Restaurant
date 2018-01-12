@@ -48,11 +48,31 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
+                      <form class="navbar-form navbar-left" role="search" method="post" action="{{route ('search')}}">
+                        {{ csrf_field() }}
+                        <div class="form-group">
+                          <select class="form-control form-control-sm" name="menu">
+                            @foreach ($menus as $menu)
+                              <option value="{{$menu->id}}">{{$menu->title}}</option>
+                            @endforeach
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <select class="form-control form-control-sm" name="price">
+                            <option value="0-5">0-5</option>
+                            <option value="6-10">6-10</option>
+                            <option value="11-15">11-15</option>
+                            <option value="15-100000">>15</option>
+                          </select>
+                          </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                      </form>
                         <!-- Authentication Links -->
                         @guest
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
+
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -84,6 +104,7 @@
 
         @yield('content')
     </div>
+
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

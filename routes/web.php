@@ -31,6 +31,7 @@ Route::get('/user/profile', 'OrderController@userProfile')->name('userProfile');
 //Socialite routes:
 Route::get('login/{driver}', 'Auth\LoginController@redirectToProvider')->name('social.login');
 Route::get('login/{driver}/callback', 'Auth\LoginController@handleProviderCallback');
+Route::post('/search', 'SearchController@search')->name('search');
 
 
 
